@@ -1,0 +1,32 @@
+.row {
+    padding-bottom: 50px;
+}
+.full-height {
+    height: 80vh;
+}
+#markdown {
+    font-family: monospace;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 15px #333;
+    -moz-box-shadow: 10px 10px 15px #333;
+    box-shadow: 10px 10px 15px #333;
+    padding: 25px 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#htmlArea {
+    background: #fff;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 15px #333;
+    -moz-box-shadow: 10px 10px 15px #333;
+    box-shadow: 10px 10px 15px #333;
+    padding: 1px 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+footer {
+    color: #fff;
+}
