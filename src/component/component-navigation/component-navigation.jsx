@@ -14,7 +14,7 @@ export default class ComponentNavigation extends Component {
                     <a className="navbar-brand">Hi</a>
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a className="nav-link active" href="#">Home</a>
+                            <a className="nav-link activeClass" href="#">Home</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">note</a>

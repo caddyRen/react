@@ -45,17 +45,17 @@ class ComponentTitle extends Component {
     render() {
         const {opacity}=this.state
         return (
-            <header className='side-header jumbotron'>
-                <div className='row'>
+                <div className='row jumbotron side-header'>
                     <div className='col-11'>
-                        <h1 style={{opacity}}>{this.props.titleName}</h1><br/>
-                        <h2 style={{opacity}}>{this.props.titleContent}</h2>
+                        <div className='page-header'>
+                            <h1 style={{opacity}}>{this.props.titleName}</h1><br/>
+                            <h2 style={{opacity}}>{this.props.titleContent}</h2>
+                        </div>
                     </div>
                     <div className='col-1'>
                         <a className='btn btn-sm btn-outline-secondary' href="#">Sign up</a>
                     </div>
                 </div>
-            </header>
         )
     }
 }
