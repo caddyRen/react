@@ -20,7 +20,7 @@ export default class ComponentList extends Component{
                 <ul className='list-group'>
                     {
                         components.map(
-                        (component,index)=><ComponentItem component={component} key={index} deleteComponent={deleteComponent} index={index}/>
+                        (component,index) =>(<ComponentItem component={component} key={index} deleteComponent={deleteComponent} index={index}/>)
                         )
                     }
                 </ul>

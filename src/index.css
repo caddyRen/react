@@ -2,7 +2,3 @@ html,body{
     height: 100%;
     width: 100%;
 }
-.all-bg{
-    background: url("bg.jpg") no-repeat top left;
-    background-size: cover;
-}

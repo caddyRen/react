@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+
 import './component-title.css'
 
 function jian(opacity) {
@@ -44,13 +45,14 @@ class ComponentTitle extends Component {
     render() {
         const {opacity}=this.state
         return (
-            <header className='site-header jumbotron'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-xs-12'>
-                            <h1 style={{opacity}}>{this.props.titleName}</h1><br/>
-                            <h2 style={{opacity}}>{this.props.titleContent}</h2>
-                        </div>
+            <header className='side-header jumbotron'>
+                <div className='row'>
+                    <div className='col-11'>
+                        <h1 style={{opacity}}>{this.props.titleName}</h1><br/>
+                        <h2 style={{opacity}}>{this.props.titleContent}</h2>
+                    </div>
+                    <div className='col-1'>
+                        <a className='btn btn-sm btn-outline-secondary' href="#">Sign up</a>
                     </div>
                 </div>
             </header>

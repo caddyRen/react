@@ -1,15 +1,8 @@
-.site-header{
-    background-color: rgba(255,255,255,0);
+.bg{
+    background: url("../../bg2.jpg") no-repeat top left;
+    background-size: contain;
 }
-.jumbotron h1{
-    font-size: 36px;
-    color: #f2ffff;
-}
-.jumbotron h2{
-    font-size: 25px;
-    color: #f2ffff;
-}
-.index-component{
-    background: url("../../bg.jpg") no-repeat top left;
-    background-size: cover;
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    padding-right: 0px;
+    padding-left: 0px;
 }

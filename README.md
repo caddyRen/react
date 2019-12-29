@@ -16,3 +16,12 @@ npm install --save axios
 ```shell script
 npm install --save showdown
 ```
+- bootstrap
+```shell script
+npm install --save bootstrap
+```
+- 发布订阅PubSubJS库，组件间通信
+```shell script
+npm install pubsub-js --save
+```
+

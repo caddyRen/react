@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import PropTypes from "prop-types";
+import Pubsub from 'pubsub-js'
 
 import './componentItem.css'
 
@@ -14,7 +15,8 @@ export default class ComponentItem extends Component{
     delClick=()=>{
         const {component,index,deleteComponent}=this.props
         if(window.confirm(`确定删除${component.userName}的评论`)){
-            deleteComponent(index)
+            //
+            Pubsub.publish('deleteComponent',index)
         }
     }
 
