@@ -6,7 +6,8 @@ export default class ReduxDemo2 extends Component{
     static propTypes={
         count:PropTypes.number.isRequired,
         increment:PropTypes.func.isRequired,
-        decrement:PropTypes.func.isRequired
+        decrement:PropTypes.func.isRequired,
+        incrementAsync:PropTypes.func.isRequired
     }
 
     increment=()=>{
@@ -25,9 +26,7 @@ export default class ReduxDemo2 extends Component{
     }
     asynIncrement=()=>{
         let num=this.select.value*1
-        setTimeout(()=>{
-            this.props.increment(num)
-        },1000)
+        this.props.incrementAsync(num)
     }
 
     render() {

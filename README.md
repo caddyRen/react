@@ -40,6 +40,10 @@ npm install --save redux
 ```shell script
 npm install --save react-redux
 ```
+-- redux异步插件
+```shell script
+npm install --save redux-thunk
+```
 
 ##SPA应用 single page web application
 
