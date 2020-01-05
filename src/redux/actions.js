@@ -1,3 +1,7 @@
+/*
+* 生成action creator
+*
+* */
 import {INCREMENT,DECREMENT} from "./action-types";
 
 export const increment=(num)=>({type:INCREMENT,data:num})

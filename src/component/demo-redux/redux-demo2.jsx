@@ -1,32 +1,37 @@
 import React, {Component} from 'react'
-
-import * as actions from '../../redux/actions'
+import PropTypes from "prop-types";
 
 export default class ReduxDemo2 extends Component{
 
+    static propTypes={
+        count:PropTypes.number.isRequired,
+        increment:PropTypes.func.isRequired,
+        decrement:PropTypes.func.isRequired
+    }
+
     increment=()=>{
         let num=this.select.value*1
-        this.props.store.dispatch(actions.increment(num))
+        this.props.increment(num)
     }
     decrement=()=>{
         let num=this.select.value*1
-        this.props.store.dispatch(actions.decrement(num))
+        this.props.decrement(num)
     }
     oddIncrement=()=>{
         let num=this.select.value*1
-        if(this.props.store.getState()%2===1){
-            this.props.store.dispatch(actions.increment(num))
+        if(this.props.count%2===1){
+            this.props.increment(num)
         }
     }
     asynIncrement=()=>{
         let num=this.select.value*1
         setTimeout(()=>{
-            this.props.store.dispatch(actions.increment(num))
+            this.props.increment(num)
         },1000)
     }
 
     render() {
-        const count=this.props.store.getState()
+        const count=this.props.count
         return(
             <div>
                <p>click {count} times</p>&nbsp;

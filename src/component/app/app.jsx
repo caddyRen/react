@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Pubsub from 'pubsub-js'
-import {createStore} from "redux";
+import {Provider} from "react-redux";
 
 import ComponentTitle from '../component-title/component-title'
 import ComponentList from '../component-list/component-list'
@@ -8,12 +8,13 @@ import ComponentAdd from '../component-add/component-add'
 import ComponentNavigation from "../component-navigation/component-navigation";
 import Main from '../demo-comment/main'
 import Search from '../demo-comment/search'
-import ReduxDemo from "../demo-redus/redux-demo1";
-import ReduxDemo2 from "../demo-redus/redux-demo2";
+import ReduxDemo from "../demo-redux/redux-demo1";
+import ReduxDemo2 from "../../containers/react-redux-demo";
 import './app.css'
+import store from "../../redux/store";
 
 
-class App extends Component {
+export default class App extends Component {
     state={
         components:[
             {userName:'caddy',content:'mmp'},
@@ -49,7 +50,9 @@ class App extends Component {
             <div className="bg container-fluid">
                 <ComponentTitle titleName="九重葛" titleContent="天下神器&nbsp;不可为也&nbsp;不可执也&nbsp;为者败之&nbsp;执者失之"/>
                 <ReduxDemo/>
-                <ReduxDemo2 store={this.props.store}/>
+                <Provider store={store}>
+                    <ReduxDemo2/>
+                </Provider>
                 <ComponentNavigation/>
                 <ComponentAdd/>
                 <ComponentList components={components}/>
@@ -62,4 +65,3 @@ class App extends Component {
     }
 }
 
-export default App
