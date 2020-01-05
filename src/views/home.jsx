@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
 import {Switch,Route,Redirect} from 'react-router-dom'
-import MyNavLink from "../component/component-navigation/my-navlink";
+import MyNavLink from "../component/component-navigation/my-navlink"
 
 import News from "./news";
 import Message from "./message";
 
 
 
-export default class Home extends Component{
+export default class Home2 extends Component{
     render() {
         return(
             <div>

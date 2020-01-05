@@ -1,27 +1,32 @@
 import React,{Component} from 'react'
 import  PropTypes from 'prop-types'
+import Pubsub from 'pubsub-js'
 
 import './componentAdd.css'
 
 class ComponentAdd extends Component{
-    static propTypes={
-        addComponent:PropTypes.func.isRequired
-    }
+
     state={
         userName:'',
         content:''
     }
 
     handleSubmit=()=>{
+        const {userName}=this.state
+        const {content}=this.state
+        const component={userName: userName,content: content}
+        Pubsub.publish('component',component)
+        this.setState({userName:'',content:''})
+
         //搜集数据并封装成components对象
-        const component=this.state
+        // const component=this.state
         //更新状态
-        this.props.addComponent(component)
+        // this.props.addComponent(component)
         //清楚数据
-        this.setState({
-            userName:'',
-            content:''
-        })
+        // this.setState({
+        //     userName:'',
+        //     content:''
+        // })
 
     }
     handleChangeName=(event)=>{

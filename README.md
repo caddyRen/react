@@ -28,7 +28,18 @@ npm install pubsub-js --save
 ```shell script
 npm install --save react-router-dom
 ```
-
+-- markdown插件
+```shell script
+npm install --save react-markdown
+```
+-- redus
+```shell script
+npm install --save redux
+```
+-- react-redus
+```shell script
+npm install --save react-redux
+```
 
 ##SPA应用 single page web application
 

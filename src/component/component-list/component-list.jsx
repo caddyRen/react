@@ -7,11 +7,10 @@ import './componentList.css'
 export default class ComponentList extends Component{
     //static 给组件类指定属性
    static propTypes={
-        components: PropTypes.array.isRequired,
-        deleteComponent:PropTypes.func.isRequired
+        components: PropTypes.array.isRequired
     }
     render() {
-        const {components,deleteComponent}=this.props
+        const {components}=this.props
         const display=components.length===0?'block':'none'
         return(
             <div className='col-md-8'>
@@ -20,7 +19,7 @@ export default class ComponentList extends Component{
                 <ul className='list-group'>
                     {
                         components.map(
-                        (component,index) =>(<ComponentItem component={component} key={index} deleteComponent={deleteComponent} index={index}/>)
+                        (component,index) =>(<ComponentItem component={component} key={index} index={index}/>)
                         )
                     }
                 </ul>
@@ -28,7 +27,3 @@ export default class ComponentList extends Component{
         )
     }
 }
-/*
-ComponentList.propTypes={
-    components: PropTyes.array.isRequired
-}*/

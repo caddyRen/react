@@ -8,12 +8,11 @@ export default class ComponentItem extends Component{
     //static 给组件类指定属性
     static propTypes={
         component: PropTypes.object.isRequired,
-        index: PropTypes.number.isRequired,
-        deleteComponent:PropTypes.func.isRequired
+        index: PropTypes.number.isRequired
     }
 
     delClick=()=>{
-        const {component,index,deleteComponent}=this.props
+        const {component,index}=this.props
         if(window.confirm(`确定删除${component.userName}的评论`)){
             //
             Pubsub.publish('deleteComponent',index)

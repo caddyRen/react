@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
+import {Switch,Route,Redirect} from 'react-router-dom'
+import MyNavLink from "./my-navlink"
 
 import './componentNavigation.css'
+import Home from "../../views/home/home";
+import ShowDown from "../../views/photo/showdown";
 
 export default class ComponentNavigation extends Component {
     constructor(props) {
@@ -14,13 +18,10 @@ export default class ComponentNavigation extends Component {
                     <a className="navbar-brand">Hi</a>
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a className="nav-link activeClass" href="#">Home</a>
+                            <MyNavLink to='/home' className='list-group-item'>Home</MyNavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">note</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">photo</a>
+                            <MyNavLink to='/showdown' className='list-group-item'>ShowDown</MyNavLink>
                         </li>
                     </ul>
                     <form className="form-inline">
@@ -28,6 +29,15 @@ export default class ComponentNavigation extends Component {
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
+                <div>
+                    <Switch>
+                        <Switch>
+                            <Route path='/home' component={Home}/>
+                            <Route path='/showdown' component={ShowDown}/>
+                            <Redirect to='/home'/>
+                        </Switch>
+                    </Switch>
+                </div>
             </div>
         )
     }

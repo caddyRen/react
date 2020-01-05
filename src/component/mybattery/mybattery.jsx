@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 
 import './myBattery.css'
 
-export default class Mybattery extends Component{
+export default class MyBattery extends Component{
 
     render() {
         return(
