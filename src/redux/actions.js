@@ -15,7 +15,7 @@ export const increment=(num)=>({type:INCREMENT,data:num})
 export const decrement=(num)=>({type:DECREMENT,data:num})
 export const addComment=(comment)=>({type:ADD_COMMENT,data:comment})
 export const delComment=(comment)=>({type:DEL_COMMENT,data:comment})
-// export const initComment=()=>({type:INIT_COMMENT})
+const initComment=(comments)=>({type:INIT_COMMENT,data:comments})
 
 
 
@@ -41,3 +41,17 @@ export const incrementAsync=(num)=>{
     }
 }
 * */
+
+//异步
+export const getComment=()=>{
+    return dispatch=>{
+        const comments=[{userName: "a",content:"b"},{userName: "caddy",content:"qnmb"}]
+        //模拟ajax一部请求
+        setTimeout(
+            ()=>{
+                dispatch(initComment(comments))
+            },1000
+        )
+    }
+
+}

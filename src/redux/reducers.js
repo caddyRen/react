@@ -8,11 +8,11 @@ import {INCREMENT,DECREMENT,ADD_COMMENT,DEL_COMMENT,INIT_COMMENT} from './action
 
 // 1.定义默认数据
 const initialState = {
-    count: 1,
-    comments:[{userName: "a",content:"b"}]
+    count: 1
+    ,comments:[]
 }
 
-export function counter(state=initialState.count,action) {
+function counter(state=initialState.count,action) {
     switch (action.type) {
         case INCREMENT:
             return state+action.data
@@ -23,7 +23,7 @@ export function counter(state=initialState.count,action) {
     }
 }
 
-export function comment(state=initialState.comments,action) {
+function comment(state=initialState.comments,action) {
     switch (action.type) {
         case ADD_COMMENT:
             state.unshift(action.data)
@@ -31,14 +31,15 @@ export function comment(state=initialState.comments,action) {
             // return state;
         case DEL_COMMENT:
             state.splice(action.data,1)
-            return state
+            return [...state];
+        case INIT_COMMENT:
+            return action.data;
         default:
             return state
     }
 }
 
 
-export const rootReducers=combineReducers({
-    counter:counter,comment:comment
+export default combineReducers({
+    counter,comment
 })
-export default rootReducers

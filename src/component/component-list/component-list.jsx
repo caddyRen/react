@@ -1,18 +1,24 @@
 import React,{Component} from 'react'
 import PropTypes from 'prop-types'
 
-import ComponentItem from '../component-item/component-item'
+import ComponentItem from '../../containers/comment-item'
 import './componentList.css'
 
 export default class ComponentList extends Component{
     //static 给组件类指定属性
    static propTypes={
         comment: PropTypes.array.isRequired
+        ,getComment:PropTypes.func.isRequired
+
+    }
+
+    componentDidMount(){
+        this.props.getComment()
     }
 
     render() {
         const {comment}=this.props
-        debugger
+        
         const display=comment.length===0?'block':'none'
         return(
             <div className='col-md-8'>

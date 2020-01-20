@@ -22,7 +22,7 @@ npm install --save bootstrap
 ```
 - 发布订阅PubSubJS库，组件间通信
 ```shell script
-npm install pubsub-js --save
+npm install --save pubsub-js
 ```
 - Router   react-router-dom网页/react-router-native手机端/react-router-anywhere服务器端
 ```shell script
@@ -78,4 +78,7 @@ npm install --save-dev redux-devtools-extension
             2. 在父路由组件中指定
                 1. 路由链接 <NavLink>
                 2. 路由<Route>
-        
+3. UI组件，容器组件，解耦
+    1. UI组件：
+
+    2. 容器组件：redux组件包装
