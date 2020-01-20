@@ -44,6 +44,11 @@ npm install --save react-redux
 ```shell script
 npm install --save redux-thunk
 ```
+-- redux管理state react无法查看，需要chrome插件和依赖
+```shell script
+npm install --save-dev redux-devtools-extension
+```
+
 
 ##SPA应用 single page web application
 

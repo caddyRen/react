@@ -1,22 +1,21 @@
 import React,{Component} from 'react'
 import  PropTypes from 'prop-types'
-import Pubsub from 'pubsub-js'
 
 import './componentAdd.css'
 
 class ComponentAdd extends Component{
 
-    state={
-        userName:'',
-        content:''
+    static propTypes={
+        addComment:PropTypes.func.isRequired
     }
 
     handleSubmit=()=>{
-        const {userName}=this.state
-        const {content}=this.state
-        const component={userName: userName,content: content}
-        Pubsub.publish('component',component)
-        this.setState({userName:'',content:''})
+        let userName=this.input.value
+        let content=this.textarea.value
+        const comment={userName: userName,content: content}
+        this.props.addComment(comment)
+        // Pubsub.publish('component',component)
+        // this.setState({userName:'',content:''})
 
         //搜集数据并封装成components对象
         // const component=this.state
@@ -30,28 +29,27 @@ class ComponentAdd extends Component{
 
     }
     handleChangeName=(event)=>{
-        const userName=event.target.value
-        this.setState({userName})
+        // const userName=event.target.value
+        // this.props.handleChangeName(userName)
     }
     handleChangeCont=(event)=>{
-        const content=event.target.value
-        this.setState({content})
+        // const content=event.target.value
+        // this.props.handleChangeContent(content)
     }
 
     render() {
-        const {userName,content}=this.state
         return(
             <div className='col-md-4'>
                 <form className='form-horizontal'>
                     <div className='form-group'>
                         <label>用户名</label>
                         <input type='text' className='form-control' placeholder='用户名'
-                               value={userName} onChange={this.handleChangeName}/>
+                         ref={(input) => this.input = input}/>
                     </div>
                     <div className='form-group'>
                         <label>评论内容</label>
                         <textarea type='text' className='form-control' rows='6' placeholder='评论内容'
-                                  value={content} onChange={this.handleChangeCont}></textarea>
+                        ref={(textarea) => this.textarea = textarea}></textarea>
                     </div>
                     <div className='form-group'>
                         <div className='col-sm-offset-2 col-sm-10'>

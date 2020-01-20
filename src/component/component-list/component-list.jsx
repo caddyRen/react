@@ -7,18 +7,20 @@ import './componentList.css'
 export default class ComponentList extends Component{
     //static 给组件类指定属性
    static propTypes={
-        components: PropTypes.array.isRequired
+        comment: PropTypes.array.isRequired
     }
+
     render() {
-        const {components}=this.props
-        const display=components.length===0?'block':'none'
+        const {comment}=this.props
+        debugger
+        const display=comment.length===0?'block':'none'
         return(
             <div className='col-md-8'>
                 <h3 className='reply'>评论回复：</h3>
                 <h2 style={{display}}>暂无评论，点击左侧添加评论</h2>
                 <ul className='list-group'>
                     {
-                        components.map(
+                        comment.map(
                         (component,index) =>(<ComponentItem component={component} key={index} index={index}/>)
                         )
                     }
